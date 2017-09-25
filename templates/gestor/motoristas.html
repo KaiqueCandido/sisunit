@@ -1,0 +1,34 @@
+<ion-view>
+  <ion-pane>
+    <ion-content overflow-scroll="true">
+      <div class="card">
+        <div class="item item-divider" align="center">
+          <h2><strong>Gerenciar motoristas</strong></h2>
+        </div>
+        <div class="bar-options">
+          <div class="bar bar-header item-input-inset">
+            <button ng-click="showModalNovoMotorista()" class="button icon-left ion-android-add-circle"></button>
+            <button ng-click="showModalEditMotorista()" ng-disabled="isMotoristaSelecioando" class="button icon-left ion-android-create"></button>
+            <button ng-click="excluirMotorista()" ng-disabled="isMotoristaSelecioando" class="button icon-left ion-android-delete"></button>
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input ng-model="criterioDeBuscaMotorista" type="search" placeholder="Procurar"/>
+            </label>
+          </div>
+        </div>
+        <div class="row row-center">
+          <div class="col"><strong>Nome</strong></div>
+          <div class="col"><strong>CPF</strong></div>
+          <div class="col"><strong>CNH</strong></div>
+          <div class="col"><strong>Status</strong></div>
+        </div>
+        <div class="row" ng-click="selecionaMotorista(motorista)" ng-repeat="motorista in motoristas | filter:criterioDeBuscaMotorista">
+  				<div class="col" ng-style="{'background-color': motorista.selected}">{{motorista.nome}}</div>
+  				<div class="col" ng-style="{'background-color': motorista.selected}">{{motorista.cpf}}</div>
+  				<div class="col" ng-style="{'background-color': motorista.selected}">{{motorista.cnh}}</div>
+  				<div class="col" ng-style="{'background-color': motorista.selected}">{{motorista.status}}</div>
+  			</div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>

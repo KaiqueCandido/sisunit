@@ -1,0 +1,12 @@
+<ion-popover-view>
+  <ion-header-bar>
+    <h1 class="title">Minhas notificações</h1>
+  </ion-header-bar>
+  <ion-content overflow-scroll="true">
+    <div ng-repeat="notificacao in notificacoes" class="card">
+      <div class="item item-divider item-text-wrap">
+        {{notificacao.notificacao}}
+      </div>
+    </div>
+  </ion-content>
+</ion-popover-view>

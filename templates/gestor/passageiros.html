@@ -1,0 +1,32 @@
+<ion-view>
+  <ion-pane>
+    <ion-content overflow-scroll="true">
+      <div class="card">
+        <div class="item item-divider" align="center">
+          <h2><strong>Gerenciar passageiros</strong></h2>
+        </div>
+        <div class="bar-options">
+          <div class="bar bar-header item-input-inset">
+            <button ng-click='novoPassageiro()' class="button icon-left ion-android-add-circle"></button>
+            <button ng-click='showFormEditPassageiro()' ng-disabled="isPassageiroSelecioando" class="button icon-left ion-android-create"></button>
+            <button ng-click='excluirPassageiro()' ng-disabled="isPassageiroSelecioando" class="button icon-left ion-android-delete"></button>
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input ng-model="criterioDeBuscaPassageiro" type="search" placeholder="Procurar"/>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">Nome</div>
+          <div class="col">E-mail</div>
+          <div class="col">Status</div>
+        </div>
+        <div ng-click="selecionaPassageiro(passageiro)" class="row" ng-repeat="passageiro in passageiros | filter:{nome:criterioDeBuscaPassageiro}">
+            <div class="col" ng-style="{'background-color': passageiro.isSelected}">{{passageiro.nome}}</div>
+            <div class="col" ng-style="{'background-color': passageiro.isSelected}">{{passageiro.login.email}}</div>
+            <div class="col" ng-style="{'background-color': passageiro.isSelected}">{{passageiro.status}}</div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>

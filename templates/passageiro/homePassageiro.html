@@ -1,0 +1,48 @@
+<ion-view>
+  <ion-pane>
+    <ion-content overflow-scroll="true">
+      <div class="card">
+        <div class="item item-divider" align="center">
+          <h2><strong>Inicio</strong></h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="item item-divider">
+                <p><strong>Identificação: </strong> Identificação do veiculo</p>
+              </div>
+              <div class="item item-text-wrap">
+                <p><strong>Motorista:</strong> Motorista do veiculo</p>
+                <p><strong>Turno:</strong> Turno de funcionamento do veiculo</p>
+                <p><strong>Status:</strong> Status do veiculo</p>
+                <p><strong>Placa:</strong> Placa do veiculo</p>
+              </div>
+              <div class="item item-divider">
+                <div class="item item-divider" align="center">
+                  <h2><strong>Pontos de paradas</strong></h2>
+                  <div class="card">
+                    <div class="item item-text-wrap">
+                      <div class="list listView">
+                        <a class="item item-icon-left" ng-click="pontoDeParadaSelecionado()"><i class="icon ion-ios-location-outline"></i>Faculdade São Francisco</a>
+                        <a class="item item-icon-left" ng-click="pontoDeParadaSelecionado()"><i class="icon ion-ios-location-outline"></i>Instituto Federal Ciencia e Tecnologia</a>
+                        <a class="item item-icon-left" ng-click="pontoDeParadaSelecionado()"><i class="icon ion-ios-location"></i>Faculdade Santa Maria</a>
+                        <a class="item item-icon-left" ng-click="pontoDeParadaSelecionado()"><i class="icon ion-ios-location"></i>Farmacia Coração de jesus</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="row responsive-sm">
+                  <div class="col col-25"></div>
+                  <button ng-click="euVou()" ng-style="{'background-color': vaiVoltar.cor}" class="button button-balanced col col-50">{{vaiVoltar.estado}}</button>
+                  <div class="col col-25"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>

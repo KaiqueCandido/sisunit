@@ -1,0 +1,26 @@
+<ion-view class="login">
+  <ion-pane>
+    <ion-content>
+      <div class="login-container">
+        <form>
+          <div align="center">
+            <img class="ionImageLogo full-image" src="./img/logo9.png" />
+          </div>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Email</span>
+            <input ng-model="login.email" type="text" placeholder="Email" name="email"/>
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Senha</span>
+            <input ng-model="login.senha" type="password" placeholder="Senha" name="senha"/>
+          </label>
+          <div class="btnLogin">
+            <button class="button button-positive btn" ng-click="goToGestor()">Gestor</button>
+            <button class="button button-positive btn" ng-click="goToMotorista()">Motorista</button>
+            <button class="button button-positive btn" ng-click="goToPassageiro()">Passageiro</button>
+          </div>
+        </form>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>

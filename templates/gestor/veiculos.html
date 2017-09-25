@@ -1,0 +1,36 @@
+<ion-view>
+  <ion-pane>
+    <ion-content overflow-scroll="true">
+      <div class="card">
+        <div class="item item-divider" align="center">
+          <h2><strong>Gerenciar veículos</strong></h2>
+        </div>
+        <div class="bar-options">
+          <div class="bar bar-header item-input-inset">
+            <button ng-click="showModalNovoVeiculo()" class="button icon-left ion-android-add-circle"></button>
+            <button ng-click="showModalEditVeiculo()" ng-disabled="isVeiculoSelecioando" class="button icon-left ion-android-create"></button>
+            <button ng-click="excluirVeiculo()" ng-disabled="isVeiculoSelecioando" class="button icon-left ion-android-delete"></button>
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input ng-model="criterioDeBuscaVeiculo" type="search" placeholder="Procurar"/>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"><strong>Placa</strong></div>
+          <div class="col"><strong>Cidade</strong></div>
+          <div class="col"><strong>UF</strong></div>
+          <div class="col"><strong>Quant. Lugares</strong></div>
+          <div class="col"><strong>Status</strong></div>
+        </div>
+        <div class="row" ng-click="selecionaVeiculo(veiculo)" ng-repeat="veiculo in veiculos | filter:criterioDeBuscaVeiculo">
+  				<div class="col" ng-style="{'background-color': veiculo.selected}">{{veiculo.placa}}</div>
+  				<div class="col" ng-style="{'background-color': veiculo.selected}">{{veiculo.cidade}}</div>
+  				<div class="col" ng-style="{'background-color': veiculo.selected}">{{veiculo.uf}}</div>
+  				<div class="col" ng-style="{'background-color': veiculo.selected}">{{veiculo.qtdelugares}}</div>
+  				<div class="col" ng-style="{'background-color': veiculo.selected}">{{veiculo.statusVeiculo}}</div>
+  			</div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>

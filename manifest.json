@@ -1,0 +1,11 @@
+{
+  "name": "Sistema de Transporte Universitario",
+  "short_name": "SisUniT",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

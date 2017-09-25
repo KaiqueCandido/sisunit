@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"/>
+    <title>SisUniT</title>
+
+    <link rel="manifest" href="manifest.json"/>
+
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet"/>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="lib/ngMask-master/dist/ngMask.min.js"></script>
+
+    <link href="css/veiculoSelecionado.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/login.css" rel="stylesheet"/>
+    <link href="css/map.css" rel="stylesheet"/>
+    <link href="css/home.css" rel="stylesheet"/>
+    <link href="css/menu.css" rel="stylesheet"/>
+    <link href="css/veiculo.css" rel="stylesheet"/>
+    <link href="css/gerenciarPassageiros.css" rel="stylesheet"/>
+
+    <script src="js/app.js"></script>
+
+    <!--Importação das Constantes!-->
+    <script src="js/constants/baseUrl.js"></script>
+
+    <!--Importação dos Services!-->
+    <script src="js/services/veiculoService.js"></script>
+    <script src="js/services/pontoDeParadaService.js"></script>
+    <script src="js/services/passageiroService.js"></script>
+    <script src="js/services/motoristaService.js"></script>
+    <script src="js/services/rotaService.js"></script>
+
+    <!--Importação das Rotas!-->
+    <script src="js/routers/appRouters.js"></script>
+    <script src="js/routers/passageiroRouters.js"></script>
+    <script src="js/routers/motoristaRouters.js"></script>
+    <script src="js/routers/gestorRouters.js"></script>
+
+    <!--Importação do intercptorsConfig e interceptors!-->
+    <script src="js/config/intercptorsConfig.js"></script>
+    <script src="js/interceptors/timestampInterceptor.js"></script>
+    <script src="js/interceptors/responseInterceptors.js"></script>
+    <script src="js/interceptors/loadingInterceptor.js"></script>
+
+    <!--Importação dos controllers de Gestor!-->
+    <script src="js/controllers/gestor/headerGestorController.js"></script>
+    <script src="js/controllers/gestor/homeGestorController.js"></script>
+    <script src="js/controllers/gestor/gestorAlterarSenhaController.js"></script>
+    <script src="js/controllers/gestor/gestorMotoristasController.js"></script>
+    <script src="js/controllers/gestor/gestorPassageirosController.js"></script>
+    <script src="js/controllers/gestor/gestorPontosDeParadaController.js"></script>
+    <script src="js/controllers/gestor/gestorRotasController.js"></script>
+    <script src="js/controllers/gestor/gestorVeiculosController.js"></script>
+    <script src="js/controllers/gestor/homeGestorController.js"></script>
+
+    <!--Importação dos controllers de Motorista!-->
+    <script src="js/controllers/motorista/headerMotoristaController.js"></script>
+    <script src="js/controllers/motorista/homeMotoristaController.js"></script>
+    <script src="js/controllers/motorista/motoristaAlterarSenhaController.js"></script>
+    <script src="js/controllers/motorista/motoristaVeiculosController.js"></script>
+
+    <!--Importação dos controllers de Passageiro!-->
+    <script src="js/controllers/passageiro/headerPassageiroController.js"></script>
+    <script src="js/controllers/passageiro/homePassageiroController.js"></script>
+    <script src="js/controllers/passageiro/passageiroAlterarSenhaController.js"></script>
+    <script src="js/controllers/passageiro/passageiroVeiculosController.js"></script>
+
+    <!-- Importação dos controllers Gerais -->
+    <script src="js/controllers/loginController.js"></script>
+
+    <!-- Importação das diretivas -->
+    <script src="js/directives/uiDateDirective.js"></script>
+
+    <!--Importação da api do Maps Google!-->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDkGeDUcB0P4GCMFBPyEMSbN5j7YyYdW-k"></script>
+
+  </head>
+  <body ng-app="starter">
+    <div ng-show="loading" class="modal-loading"></div>
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

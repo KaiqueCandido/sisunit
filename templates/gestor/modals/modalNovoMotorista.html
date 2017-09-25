@@ -1,0 +1,80 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Novo Motorista</h1>
+    <button class="button button-clear button-primary" ng-click="modalNovoMotorista.hide()">Cancelar</button>
+  </ion-header-bar>
+  <ion-content class="padding" overflow-scroll="true">
+
+    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+      <span class="input-label">Nome</span>
+      <input ng-model="newMotorista.nome" type="text" placeholder="Nome"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">CNH</span>
+      <input ng-model="newMotorista.cnh" type="text" placeholder="CNH"/>
+    </label>
+
+    <label class="item item-input item-select item-input-modal">
+      <div class="input-label">Sexo</div>
+      <select ng-model="newMotorista.genero">
+        <option selected="" disabled=""></option>
+        <option value="MASCULINO">Masculino</option>
+        <option value="FEMININO">Feminino</option>
+      </select>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">E-mail</span>
+      <input ng-model="newMotorista.login.email" type="text" placeholder="E-mail"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Senha de acesso</span>
+      <input ng-model="newMotorista.login.senha" type="password" placeholder="Senha de acesso"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Data de Nascimento</span>
+      <input ng-model="newMotorista.dataNascimento" type="text" placeholder="Data de Nascimento" ui-date/>
+    </label>    
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">CPF</span>
+      <input ng-model="newMotorista.cpf" mask='999.999.999-99' type="text" placeholder="CPF"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Endereço</span>
+      <input ng-model="newMotorista.endereco.rua" type="text" placeholder="Endereço"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Bairro</span>
+      <input ng-model="newMotorista.endereco.bairro" type="text" placeholder="Bairro"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Cidade</span>
+      <input ng-model="newMotorista.endereco.cidade" type="text" placeholder="Cidade"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Estado</span>
+      <input ng-model="newMotorista.endereco.uf" type="text" placeholder="Estado"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">CEP</span>
+      <input ng-model="newMotorista.endereco.cep" mask='99999-999' type="text" placeholder="CEP"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Telefone</span>
+      <input ng-model="newMotorista.telefone" mask='(99) 9 9999-9999' type="text" placeholder="Telefone"/>
+    </label>
+
+    <button class="button button-full button-balanced" ng-click="salvarNovoMotorista(newMotorista)">Salvar</button>
+
+  </ion-content>
+</ion-modal-view>

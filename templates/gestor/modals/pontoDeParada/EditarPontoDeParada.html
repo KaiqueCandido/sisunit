@@ -1,0 +1,19 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Editar Ponto de Parada</h1>
+    <button class="button button-clear button-primary" ng-click="EditarPontoDeParada.hide()">Cancelar</button>
+  </ion-header-bar>
+  <ion-content class="padding" overflow-scroll="true">
+    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+      <span class="input-label">Nome do ponto de parada</span>
+      <input ng-model="pontoDeParadaSelecionado.nome" type="text" placeholder="Nome do ponto de parada"/>
+    </label>
+    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+      <span class="input-label">Referencia do ponto de parada</span>
+      <input ng-model="pontoDeParadaSelecionado.referencia" type="text" placeholder="Referencia do ponto de parada"/>
+    </label><br/>
+    <p align="center">Arraste e solte o marcador para selecionar uma localização</p>
+    <div class="map" id="mapEditarPonto"></div>
+    <button class="button button-full button-balanced" ng-click="editarPontoDeParada(pontoDeParadaSelecionado)">Atualizar</button>
+  </ion-content>
+</ion-modal-view>

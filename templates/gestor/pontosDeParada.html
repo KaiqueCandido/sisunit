@@ -1,0 +1,33 @@
+<ion-view>
+  <ion-pane>
+    <ion-content overflow-scroll="true">
+      <div class="card">
+        <div class="item item-divider" align="center">
+          <h2><strong>Gerenciar pontos de parada</strong></h2>
+        </div>
+        <div class="bar-options">
+          <div class="bar bar-header item-input-inset">
+            <button ng-click='showModalNovoPontoDeParada()' class="button icon-left ion-android-add-circle"></button>
+            <button ng-click='showModalVisualizarPontoDeParada()' ng-disabled="isPontoDeParadaSelecioando" class="button icon-left ion-android-search"></button>
+            <button ng-click='showModalEditarPontoDeParada()' ng-disabled="isPontoDeParadaSelecioando" class="button icon-left ion-android-create"></button>
+            <button ng-disabled="isPontoDeParadaSelecioando" class="button icon-left ion-android-delete"></button>
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input ng-model="criterioDeBuscaPassageiro" type="search" placeholder="Procurar"/>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">Nome</div>
+          <div class="col">Referencia</div>
+          <div class="col">Status</div>
+        </div>
+        <div ng-click="selecionaPontoDeParada(ponto)" class="row" ng-repeat="ponto in pontos | filter:{nome:criterioDeBuscaPassageiro}">
+          <div class="col" ng-style="{'background-color': ponto.isSelected}">{{ponto.nome}}</div>
+          <div class="col" ng-style="{'background-color': ponto.isSelected}">{{ponto.referencia}}</div>
+          <div class="col" ng-style="{'background-color': ponto.isSelected}">{{ponto.status}}</div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>

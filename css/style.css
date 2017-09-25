@@ -1,0 +1,59 @@
+.bar-positive {
+  background-color: #001f54 !important;
+  border-color: #001f54 !important;
+}
+
+.avatar-home{
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+.avatar-home img{
+  margin-top: 9%;
+}
+
+.btnLogin{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.btnLogin button{
+  width: 100%;
+}
+
+.modal-loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  z-index: 1100;
+  background-image: url('../img/gifs/ring.gif');
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position: center;
+}
+
+.card-veiculos {
+  margin-bottom: -25px !important;
+}
+
+.conteudo-modal {
+  padding: 20px !important;
+}
+
+.item-input-modal {
+  border-right: none !important;
+  border-left: none !important;
+}
+
+.item-input-modal-primeiro-item {
+  border-top: none !important;
+}
+
+  @media only screen and (min-width: 768px){
+    .button-side-menu {
+      display: none !important;
+    }
+  }

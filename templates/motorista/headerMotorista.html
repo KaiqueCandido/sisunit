@@ -1,0 +1,29 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content edge-drag-threshold="true" drag-content="true">
+    <div class="bar bar-positive">
+      <button class="button button-clear button-icon light ion-navicon button-side-menu" menu-toggle="left"></button>
+    </div>
+    <br/><br/>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" expose-aside-when="large">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">Perfil motorista</h1>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+      <div class="item item-avatar avatar-home">
+        <img src="./img/avatar.png"/>
+        <h2>Nome do Motorista</h2>
+        <p>motorista@email.com</p>
+      </div>
+      <ion-list>
+        <a ng-click="inicio()" menu-close="" class="item item-icon-left"><i class="icon ion-home"></i>Inicio</a>
+        <a ng-click="veiculos()" menu-close="" class="item item-icon-left"><i class="icon ion-android-bus"></i>Veiculos</a>
+        <div class="item item-divider">Utilitários</div>
+        <a ng-click="alterarSenha()" menu-close="" class="item item-icon-left"><i class="icon ion-unlocked"></i>Alterar senha</a>
+        <a ng-click="logout()" menu-close="" class="item item-icon-left"><i class="icon ion-reply"></i>Sair</a>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

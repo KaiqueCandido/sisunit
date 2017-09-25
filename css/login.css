@@ -1,0 +1,44 @@
+.login ion-pane {
+  background-color: #001f54;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.login input{
+  color: #0a1128;
+}
+
+.login-container{
+  max-width: 400px;
+  margin:0 auto;
+  margin-top: 10%;
+}
+
+.login form{
+  padding:20px;
+  margin:0 auto;
+  width: 96%;
+  background-color: #fefcfb;
+  border-radius: 5px;
+}
+
+.btn{
+  margin-top: 20px;
+  width: 100%;
+}
+
+.login label{
+  border: none;
+  border-bottom: #001f54 solid 1px;
+}
+
+.ionImageLogo{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 20%;
+}
+
+.btnLogin button{
+  background-color: #1282a2 !important;
+}

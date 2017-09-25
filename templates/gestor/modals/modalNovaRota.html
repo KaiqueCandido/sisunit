@@ -1,0 +1,78 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Nova Rota</h1>
+    <button class="button button-clear button-primary" ng-click="modalNovaRota.hide()">Cancelar</button>
+  </ion-header-bar>
+  <ion-content class="padding" overflow-scroll="true">
+
+    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+      <span class="input-label">Descrição de horarios</span>
+      <input ng-model="rota.descricao" type="text" placeholder="Descrição de horarios"/>
+    </label>
+
+    <label class="item item-input item-select item-input-modal">
+      <div class="input-label">Dia da semana</div>
+      <select ng-model="rota.cronograma.diaDaSemana">
+        <option selected="" disabled=""></option>
+        <option value="SEGUNDA">Segunda</option>
+        <option value="TERCA">Terça</option>
+        <option value="QUARTA">Quarta</option>
+        <option value="QUINTA">Quinta</option>
+        <option value="SEXTA">Sexta</option>
+        <option value="SABADO">Sabado</option>
+        <option value="DOMINGO">Domingo</option>
+      </select>
+    </label>
+
+    <label class="item item-input item-select item-input-modal">
+      <div class="input-label">Turno</div>
+      <select ng-model="rota.cronograma.turno">
+        <option selected="" disabled=""></option>
+        <option value="MANHA">Manhã</option>
+        <option value="TARDE">Tarde</option>
+        <option value="NOITE">Noite</option>
+      </select>
+    </label>
+
+
+    <div class="list">
+      <br/><p><strong>Horario de Inicio</strong></p>
+      <div class="item range range-positive">
+        <div class="label">Hora</div>
+        <input ng-model="horarioDeInicio.hora" type="range" name="volume" min="0" max="12" value="0">
+        <div class="label">Minuto</div>
+        <input ng-model="horarioDeInicio.minuto" type="range" name="volume" min="0" max="59" value="0">
+        <h2>{{horarioDeInicio.hora}}:{{horarioDeInicio.minuto}}</h2>
+      </div>
+    </div>
+    <!-- <div class="list">
+      <p><strong>Horario de Termino</strong></p>
+      <div class="item range range-positive">
+        <div class="label">Hora</div>
+        <input ng-model="horarioDeTermino.hora" type="range" name="volume" min="0" max="12" value="0">
+        <div class="label">Minuto</div>
+        <input ng-model="horarioDeTermino.minuto" type="range" name="volume" min="0" max="59" value="0">
+        <h2>{{horarioDeTermino.hora}}:{{horarioDeTermino.minuto}}</h2>
+      </div>
+    </div> -->
+
+    <label class="item item-input item-select item-input-modal">
+      <div class="input-label">Motorista</div>
+      <select ng-options="motorista.nome for motorista in motoristas" ng-model="rota.motorista">
+        <option selected="" disabled=""></option>
+      </select>
+    </label>
+
+    <label class="item item-input item-select item-input-modal">
+      <div class="input-label">Veiculo</div>
+      <select ng-options="veiculo.descricao for veiculo in veiculos" ng-model="rota.veiculo">
+        <option selected="" disabled=""></option>
+      </select>
+    </label>
+
+    <br/>
+    <p align="center">Selecione os pontos de parada no mapa para que os mesmos sejam associados a esta Rota</p>
+    <div id="map"></div>
+    <button class="button button-full button-balanced" ng-click="salvarNovaRota(rota)">Salvar</button>
+  </ion-content>
+</ion-modal-view>

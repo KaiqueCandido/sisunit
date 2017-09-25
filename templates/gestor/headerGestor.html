@@ -1,0 +1,36 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content edge-drag-threshold="true" drag-content="true">
+    <div class="bar bar-positive">
+      <button class="button button-clear button-icon light ion-navicon button-side-menu" menu-toggle="left"></button>
+    </div>
+    <br/><br/>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" expose-aside-when="large">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">Perfil Gestor</h1>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+
+      <div class="item item-avatar avatar-home">
+        <img src="./img/avatar.png"/>
+        <h2>Nome do gestor</h2>
+        <p>gestor@email.com</p>
+      </div>
+      <ion-list>
+        <a ng-click="inicio()" menu-close="" class="item item-icon-left"><i class="icon ion-home"></i>Inicio</a>
+        <div class="item item-divider">Gerenciar</div>
+        <a ng-click="veiculos()" menu-close="" class="item item-icon-left"><i class="icon ion-android-bus"></i>Veiculos</a>
+        <a ng-click="motoristas()" menu-close="" class="item item-icon-left"><i class="icon ion-ios-person"></i>Motoristas</a>
+        <a ng-click="passageiros()" menu-close="" class="item item-icon-left"><i class="icon ion-person-stalker"></i>Passageiros</a>
+        <a ng-click="pontosDeParada()" menu-close="" class="item item-icon-left"><i class="icon ion-location"></i>Pontos de parada</a>
+        <a ng-click="rotas()" menu-close="" class="item item-icon-left"><i class="icon ion-map"></i>Rotas</a>
+        <div class="item item-divider">Relatorios</div>
+        <div class="item item-divider">Utilitarios</div>
+        <a ng-click="alterarSenha()" menu-close="" class="item item-icon-left"><i class="icon ion-unlocked"></i>Alterar senha</a>
+        <a ng-click="logout()" menu-close="" class="item item-icon-left"><i class="icon ion-reply"></i>Sair</a>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

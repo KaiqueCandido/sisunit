@@ -1,0 +1,46 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Novo Veiculo</h1>
+    <button class="button button-clear button-primary" ng-click="modalNovoVeiculo.hide()">Cancelar</button>
+  </ion-header-bar>
+  <ion-content class="padding" overflow-scroll="true">
+
+    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+      <span class="input-label">Descrição do veiculo</span>
+      <input ng-model="newVeiculo.descricao" type="text" placeholder="Descrição do veiculo"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+      <span class="input-label">Placa do veiculo</span>
+      <input ng-model="newVeiculo.placa" type="text" mask='AAA-9999' placeholder="Placa do veiculo"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Cidade do veiculo</span>
+      <input ng-model="newVeiculo.cidade" type="text" placeholder="Cidade do veiculo"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">UF do veiculo</span>
+      <input ng-model="newVeiculo.uf" type="text" placeholder="UF do veiculo"/>
+    </label>
+
+    <label class="item item-input item-floating-label item-input-modal">
+      <span class="input-label">Quantidade de lugares</span>
+      <input ng-model="newVeiculo.qtdelugares" type="text" placeholder="Quantidade de lugares"/>
+    </label>
+
+    <label class="item item-input item-select item-input-modal">
+      <div class="input-label">Status do veiculo</div>
+      <select ng-model="newVeiculo.statusVeiculo">
+        <option selected="" disabled=""></option>
+        <option value="ATIVO">Ativo</option>
+        <option value="MANUTENCAO">Manutencao</option>
+        <option value="REVISAO">Revisão</option>
+      </select>
+    </label>
+
+    <button class="button button-full button-balanced" ng-click="salvarNovoVeiculo(newVeiculo)">Salvar</button>
+
+  </ion-content>
+</ion-modal-view>

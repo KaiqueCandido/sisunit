@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-pane>
+    <ion-content overflow-scroll="true">
+      <div class="card">
+        <div class="item item-divider" align="center">
+          <h2><strong>Veiculos</strong></h2>
+        </div>
+        <div class="row" ng-repeat="veiculo in veiculos">
+          <div class="col card-veiculos">
+            <div ng-click="abrirVeiculoDialog(veiculo)" class="card">
+              <div class="item item-divider">
+                <i class="icon ion-android-bus"></i>
+                <strong>Identificação: </strong> {{veiculo.identificacao}}
+              </div>
+              <div class="item item-text-wrap">
+                <p>
+                  <strong>Motorista:</strong> {{veiculo.motorista}}
+                  <strong>Turno:</strong> {{veiculo.turno}}
+                  <strong>Status:</strong> {{veiculo.status}}
+                  <strong>Placa:</strong> {{veiculo.placa}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>

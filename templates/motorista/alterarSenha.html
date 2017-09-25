@@ -1,0 +1,36 @@
+<ion-view>
+  <ion-pane>
+    <ion-content overflow-scroll="true">
+      <div class="card">
+        <div class="item item-divider" align="center">
+          <h2><strong>Alterar Senha</strong></h2>
+        </div>
+        <div class="item item-text-wrap">
+          <div class="row responsive-sm">
+            <div class="col">
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Senha antiga</span>
+                <input ng-model="senhaAntiga" type="password" placeholder="Senha antiga"/>
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Nova senha</span>
+                <input ng-model="novaSenha" type="password" placeholder="Nova senha"/>
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Confirmar nova senha</span>
+                <input ng-model="confirmarNovaSenha" type="password" placeholder="Confirmar nova senha"/>
+              </label>
+              <br/>
+            </div>
+          </div>
+        </div>
+        <div class="item item-divider">
+          <div class="row responsive-sm">
+            <button ng-click="cancelarAlteracaoDeenha()" class="button button-assertive col col-33">Cancelar</button>
+            <button ng-click="alterarSenha(senhaAntiga, novaSenha, confirmarNovaSenha)" class="button button-balanced col col-33 col-offset-33">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-pane>
+</ion-view>
