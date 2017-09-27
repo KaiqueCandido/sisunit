@@ -3,11 +3,15 @@ angular.module('starter', [
   'uiDateDirective',
   'ngMask',
   'baseUrl',
+
   'veiculoService',
   'pontoDeParadaService',
   'passageiroService',
   'motoristaService',
   'rotaService',
+  'estadoService',
+  'cidadeService',
+
   'loginController',
   'headerPassageiroController',
   'homePassageiroController',

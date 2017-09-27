@@ -3,16 +3,13 @@ angular.module("starter").factory("loadingInterceptor", function ($q, $rootScope
     request: function (config) {      
       return config;
     },
-    requestError: function (rejection) {
-      $rootScope.loading = false;
+    requestError: function (rejection) {      
       return $q.reject(rejection);
     },
-    response: function (response) {
-      $rootScope.loading = false;
+    response: function (response) {      
       return response;
     },
-    responseError: function (rejection) {
-      $rootScope.loading = false;
+    responseError: function (rejection) {      
       return $q.reject(rejection);
     }
   };

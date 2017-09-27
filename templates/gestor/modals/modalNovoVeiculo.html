@@ -4,43 +4,39 @@
     <button class="button button-clear button-primary" ng-click="modalNovoVeiculo.hide()">Cancelar</button>
   </ion-header-bar>
   <ion-content class="padding" overflow-scroll="true">
+    <form ng-submit="salvarNovoVeiculo(newVeiculo)">
 
-    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
-      <span class="input-label">Descrição do veiculo</span>
-      <input ng-model="newVeiculo.descricao" type="text" placeholder="Descrição do veiculo"/>
-    </label>
+      <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+        <span class="input-label">Descrição do veiculo</span>
+        <input ng-model="newVeiculo.descricao" type="text" placeholder="Descrição do veiculo"/>
+      </label>
 
-    <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
-      <span class="input-label">Placa do veiculo</span>
-      <input ng-model="newVeiculo.placa" type="text" mask='AAA-9999' placeholder="Placa do veiculo"/>
-    </label>
+      <label class="item item-input item-floating-label item-input-modal item-input-modal-primeiro-item">
+        <span class="input-label">Placa do veiculo</span>
+        <input ng-model="newVeiculo.placa" type="text" mask='AAA-9999' placeholder="Placa do veiculo"/>
+      </label>
 
-    <label class="item item-input item-floating-label item-input-modal">
-      <span class="input-label">Cidade do veiculo</span>
-      <input ng-model="newVeiculo.cidade" type="text" placeholder="Cidade do veiculo"/>
-    </label>
+      <label class="item item-input item-floating-label item-input-modal">
+        <span class="input-label">Quantidade de lugares</span>
+        <input ng-model="newVeiculo.qtdelugares" type="text" placeholder="Quantidade de lugares"/>
+      </label>
+      
+      <label class="item item-input item-select item-input-modal">
+        <div class="input-label">Selecione um estado</div>
+        <select ng-model="newVeiculo.estado" ng-options="estado.uf for estado in estados" ng-change="getCidadesPeloEstado()">
+          <option selected="" disabled=""></option>          
+        </select>
+      </label>
 
-    <label class="item item-input item-floating-label item-input-modal">
-      <span class="input-label">UF do veiculo</span>
-      <input ng-model="newVeiculo.uf" type="text" placeholder="UF do veiculo"/>
-    </label>
+      <label class="item item-input item-select item-input-modal">
+        <div class="input-label">Selecione uma cidade</div>
+        <select ng-model="newVeiculo.cidade" ng-options="cidade.nome for cidade in cidades">
+          <option selected="" disabled=""></option>          
+        </select>
+      </label>
 
-    <label class="item item-input item-floating-label item-input-modal">
-      <span class="input-label">Quantidade de lugares</span>
-      <input ng-model="newVeiculo.qtdelugares" type="text" placeholder="Quantidade de lugares"/>
-    </label>
+      <button class="button button-full button-balanced" type="submit">Salvar</button>
 
-    <label class="item item-input item-select item-input-modal">
-      <div class="input-label">Status do veiculo</div>
-      <select ng-model="newVeiculo.statusVeiculo">
-        <option selected="" disabled=""></option>
-        <option value="ATIVO">Ativo</option>
-        <option value="MANUTENCAO">Manutencao</option>
-        <option value="REVISAO">Revisão</option>
-      </select>
-    </label>
-
-    <button class="button button-full button-balanced" ng-click="salvarNovoVeiculo(newVeiculo)">Salvar</button>
-
+    </form>
   </ion-content>
 </ion-modal-view>

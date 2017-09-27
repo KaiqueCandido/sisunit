@@ -22,7 +22,7 @@ angular.module('rotaService', []).service('rotaService', function(baseUrl, $http
 
   this.excluir = function(rota) {
     $rootScope.loading = true;
-    return $http.delete(baseUrl.server + 'rota', rota);
+    return $http.post(baseUrl.server + 'rota/remove/' +  rota.id);
   }
 
 });

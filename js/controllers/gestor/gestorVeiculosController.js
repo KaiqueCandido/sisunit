@@ -1,16 +1,55 @@
 angular.module('gestorVeiculosController', [])
 
-.controller('gestorVeiculosController', function ($scope, $http, $state, $rootScope, $ionicPopup, $ionicModal, veiculoService) {
+.controller('gestorVeiculosController', function ($scope, $http, $state, $rootScope, $ionicPopup, $ionicModal, veiculoService, estadoService, cidadeService) {
   $scope.isVeiculoSelecioando = true;
   $scope.newVeiculo = {};
   $scope.veiculo = {};
   $scope.veiculos = [];
+  $scope.estados = [];
+  $scope.cidades = [];
 
   $scope.getVeiculos = function(){
     veiculoService.listar().then(function sucess(response) {
-      $scope.veiculos = response.data;
+      if (response.data.length > 0) {
+        $scope.veiculos = response.data;        
+        $rootScope.loading = false;
+      } else {
+        $ionicPopup.alert({title:'Aviso', template:'Não foram encontrados registros!'});
+        $rootScope.loading = false;
+      }
     }, function error() {
       $ionicPopup.alert({title:'Problema', template:'Não foi possivel carregar os veiculos!'});
+        $rootScope.loading = false;
+    });
+  }
+
+  $scope.getEstados = function(){
+    estadoService.listar().then(function sucess(response) {
+      if (response.data.length > 0) {
+        $scope.estados = response.data;        
+        $rootScope.loading = false;
+      } else {
+        $ionicPopup.alert({title:'Aviso', template:'Não foram encontrados estados na base de dados!'});
+        $rootScope.loading = false;
+      }
+    }, function error() {
+      $ionicPopup.alert({title:'Problema', template:'Não foi possivel carregar os estados!'});
+        $rootScope.loading = false;
+    });
+  }
+
+  $scope.getCidadesPeloEstado = function(){    
+    cidadeService.listarPorEstado($scope.newVeiculo.estado.id).then(function sucess(response) {
+      if (response.data.length > 0) {
+        $scope.cidades = response.data;        
+        $rootScope.loading = false;
+      } else {
+        $ionicPopup.alert({title:'Aviso', template:'Não foram encontrados cidades para o estado selecionado!'});
+        $rootScope.loading = false;
+      }
+    }, function error() {
+      $ionicPopup.alert({title:'Problema', template:'Não foi possivel carregar as cidades!'});
+        $rootScope.loading = false;
     });
   }
 
@@ -23,6 +62,7 @@ angular.module('gestorVeiculosController', [])
   });
   $scope.showModalNovoVeiculo = function (){
     $scope.modalNovoVeiculo.show();
+    $scope.getEstados();
   }
   $ionicModal.fromTemplateUrl('templates/gestor/modals/modalEditVeiculo.html', {
     scope: $scope,

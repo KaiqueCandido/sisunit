@@ -22,7 +22,7 @@ angular.module('passageiroService', []).service('passageiroService', function(ba
 
   this.excluir = function(passageiro) {
     $rootScope.loading = true;
-    return $http.delete(baseUrl.server + 'passageiro', passageiro);
+    return $http.post(baseUrl.server + 'passageiro/remove/' +  passageiro.id);
   }
 
 });

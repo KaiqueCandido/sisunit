@@ -52,8 +52,12 @@
   border-top: none !important;
 }
 
-  @media only screen and (min-width: 768px){
-    .button-side-menu {
-      display: none !important;
-    }
+@media only screen and (min-width: 768px){
+  .button-side-menu {
+    display: none !important;
   }
+}
+
+input:invalid {
+    box-shadow: none;
+}

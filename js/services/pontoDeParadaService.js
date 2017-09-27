@@ -20,4 +20,9 @@ angular.module('pontoDeParadaService', []).service('pontoDeParadaService', funct
     return $http.put(baseUrl.server + 'pontodeparada', pontoDeParada);
   }
 
+  this.excluir = function(pontodeparada) {
+    $rootScope.loading = true;
+    return $http.post(baseUrl.server + 'pontodeparada/remove/' +  pontodeparada.id);
+  }
+
 });

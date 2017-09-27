@@ -22,7 +22,7 @@ angular.module('motoristaService', []).service('motoristaService', function(base
 
   this.excluir = function(motorista) {
     $rootScope.loading = true;
-    return $http.post(baseUrl.server + 'motorista/' + motorista.id);
+    return $http.post(baseUrl.server + 'motorista/remove/' + motorista.id);
   }
 
 });

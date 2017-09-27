@@ -22,7 +22,7 @@ angular.module('veiculoService', []).service('veiculoService', function(baseUrl,
 
   this.excluir = function(veiculo) {    
     $rootScope.loading = true;
-    return $http.post(baseUrl.server + 'veiculo/' + veiculo.id);
+    return $http.post(baseUrl.server + 'veiculo/remove/' + veiculo.id);
   }
 
 });
